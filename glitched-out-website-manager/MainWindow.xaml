@@ -1,0 +1,68 @@
+﻿<Window x:Class="glitched_out_website_manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:glitched_out_website_manager"
+        xmlns:views="clr-namespace:glitched_out_website_manager.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="675" Width="1200">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <!-- Left Side -->
+        <Grid Grid.Column="0"
+              Margin="20">
+
+            <Border Padding="15"
+                    Background="LightGray"
+                    BorderBrush="Black"
+                    BorderThickness="1">
+
+                <Grid>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+            
+                    <!-- App Title -->
+                    <TextBlock Grid.Row="0"
+                               Margin="0"
+                               FontSize="32"
+                               FontWeight="Bold"
+                               Text="Website Manager" />
+
+                    <!-- Separator -->
+                    <Grid Grid.Row="1">
+                        <Separator Height="10"
+                                   Background="Black" />
+                    </Grid>
+
+                    <!-- Mode Buttons -->
+                    <UniformGrid Grid.Row="2"
+                                 Margin="40,20"
+                                 Rows="3">
+                        <Button Content="Shows Editor"
+                                    Command="{Binding ShowShowsCommand}"
+                                    Margin="0,8"/>
+                        <Button Content="Release Editor"
+                                    Command="{Binding ShowReleasesCommand}"
+                                    Margin="0,8"/>
+                        <Button Content="Photo Album Editor"
+                                    Command="{Binding ShowPhotoAlbumCommand}"
+                                    Margin="0,8" />
+                    </UniformGrid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <views:ShowsView Grid.Column="1" />
+    </Grid>
+</Window>
