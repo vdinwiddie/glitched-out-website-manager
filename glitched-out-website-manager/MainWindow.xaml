@@ -63,6 +63,7 @@
             </Border>
         </Grid>
 
-        <views:ShowsView Grid.Column="1" />
+        <ContentControl Grid.Column="1"
+                Content="{Binding CurrentEditor}" />
     </Grid>
 </Window>
